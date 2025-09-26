@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cap Try On</title>
+    <style>
+      body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #000; color: #fff; }
+      #canvas { width: 100vw; height: 100vh; display: block; background: #000; }
+      .ui { position: fixed; top: 12px; left: 12px; right: 12px; display: flex; gap: 8px; z-index: 2; }
+      .ui select { padding: 6px 8px; border-radius: 8px; border: 1px solid #333; background: rgba(20,20,20,.7); color: #fff; backdrop-filter: blur(6px); }
+      #lens-carousel { position: fixed; left: 0; right: 0; bottom: 12px; padding: 12px 14px; display: flex; gap: 12px; overflow-x: auto; scrollbar-width: none; z-index: 2; min-height: 56px; align-items: center; }
+      #lens-carousel::-webkit-scrollbar { display: none; }
+      .lens-chip { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 999px; border: 1px solid #333; background: rgba(20,20,20,.7); color: #fff; cursor: pointer; user-select: none; backdrop-filter: blur(6px); }
+      .lens-chip img { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; }
+      .lens-chip.active { border-color: #fff; background: rgba(255,255,255,.15); }
+    </style>
+  </head>
+  <body>
+    <div class="ui">
+      <select id="cameras"></select>
+      <select id="lenses"></select>
+    </div>
+    <div id="lens-carousel"></div>
+    <canvas id="canvas"></canvas>
+    <script type="module" src="./src/script.ts"></script>
+  </body>
+</html>
